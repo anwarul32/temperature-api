@@ -8,8 +8,15 @@ const loadTemperature = city => {
     .then(data => displayTemperature(data));
 }
 const displayTemperature = data => {
-    const temperature = document.getElementById('temperature');
-    console.log(data.main.temp);
+    const temperature = document.getElementById('temperature');=
     temperature.innerText = data.main.temp
 }
-loadTemperature('dhaka');
+
+document.getElementById('btn-search').addEventListener('click', function(){
+    const searchField = document.getElementById('search-field');
+    const city = searchField.value;
+    loadTemperature(city);
+})
+
+
+loadTemperature('feni');
